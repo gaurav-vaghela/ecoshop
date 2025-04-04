@@ -161,7 +161,16 @@ The app supports light and dark modes. Theme settings are managed through:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under a modified version of the [MIT License](LICENSE).
+
+You are free to copy and use this project for **personal** and **educational** purposes only.
+
+**You are NOT allowed to:**
+- Use this project for **commercial or earning purposes**
+- Modify or change the **colors** of the project
+
+By using this project, you agree to the terms outlined in the [LICENSE](LICENSE) file.
+
 
 ## 🙏 Acknowledgments
 
