@@ -6,6 +6,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { Navbar } from './components/Navbar';
+import { CategoryBar } from './components/CategoryBar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
@@ -61,6 +62,7 @@ function App() {
               <ScrollToTop />
               <ScrollToTopButton />
               <Navbar />
+              <CategoryBar />
               <main className="flex-1">
                 <PageWrapper>
                   <Routes>
