@@ -13,6 +13,7 @@ export const Products = () => {
   const [sortBy, setSortBy] = useState<string>('featured');
   const [inStock, setInStock] = useState<boolean>(false);
   const [onSale, setOnSale] = useState<boolean>(false);
+  const [visibleProducts, setVisibleProducts] = useState(9);
 
   const categories = [
     { 
@@ -49,6 +50,10 @@ export const Products = () => {
           return 0;
       }
     });
+
+  const loadMore = () => {
+    setVisibleProducts(prev => Math.min(prev + 12, filteredProducts.length));
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -220,12 +225,12 @@ export const Products = () => {
           {/* Products Grid */}
           <div className="flex-1">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.map(product => (
+              {filteredProducts.slice(0, visibleProducts).map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
             
-            {filteredProducts.length === 0 && (
+            {filteredProducts.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-gray-500 dark:text-gray-400">No products found matching your criteria.</p>
                 <button
@@ -239,6 +244,15 @@ export const Products = () => {
                   className="mt-4 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300"
                 >
                   Reset all filters
+                </button>
+              </div>
+            ) : visibleProducts < filteredProducts.length && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={loadMore}
+                  className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors"
+                >
+                  Load More
                 </button>
               </div>
             )}

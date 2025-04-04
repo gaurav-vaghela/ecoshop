@@ -1,6 +1,38 @@
 import React, { useState } from 'react';
-import { User, Mail, Phone, MapPin, Camera, Edit2 } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Camera, Edit2, Package, Clock } from 'lucide-react';
 import { MetaTags } from '../components/MetaTags';
+import { Link } from 'react-router-dom';
+
+const recentOrders = [
+  {
+    id: 'ORD-2024-001',
+    date: '2024-03-15',
+    status: 'Delivered',
+    total: 299.97,
+    items: [
+      {
+        name: 'Premium Wireless Headphones',
+        image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200'
+      },
+      {
+        name: 'Smart Watch Pro',
+        image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200'
+      }
+    ]
+  },
+  {
+    id: 'ORD-2024-002',
+    date: '2024-03-10',
+    status: 'Shipped',
+    total: 79.99,
+    items: [
+      {
+        name: 'Leather Laptop Bag',
+        image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200'
+      }
+    ]
+  }
+];
 
 export const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -15,7 +47,6 @@ export const Profile = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsEditing(false);
-    // Handle profile update
   };
 
   return (
@@ -136,9 +167,46 @@ export const Profile = () => {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
             <h2 className="text-lg font-semibold mb-4 dark:text-white">Recent Orders</h2>
-            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-              No recent orders
+            <div className="space-y-4">
+              {recentOrders.map((order) => (
+                <Link
+                  key={order.id}
+                  to={`/orders`}
+                  className="block bg-gray-50 dark:bg-gray-700 rounded-lg p-4 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+                >
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <p className="font-medium dark:text-white">{order.id}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{order.date}</p>
+                    </div>
+                    <span className="text-sm font-medium text-teal-600 dark:text-teal-400">
+                      ${order.total.toFixed(2)}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    {order.items.map((item, index) => (
+                      <img
+                        key={index}
+                        src={item.image}
+                        alt={item.name}
+                        className="w-12 h-12 rounded object-cover"
+                      />
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <Package className="h-4 w-4" />
+                    <span>{order.status}</span>
+                  </div>
+                </Link>
+              ))}
             </div>
+            <Link
+              to="/orders"
+              className="mt-4 inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300"
+            >
+              View All Orders
+              <Clock className="h-4 w-4" />
+            </Link>
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
             <h2 className="text-lg font-semibold mb-4 dark:text-white">Wishlist</h2>
