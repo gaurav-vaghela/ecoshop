@@ -62,7 +62,9 @@ function App() {
               <ScrollToTop />
               <ScrollToTopButton />
               <Navbar />
-              <CategoryBar />
+              <Routes>
+                <Route path="/" element={<CategoryBar />} />
+              </Routes>
               <main className="flex-1">
                 <PageWrapper>
                   <Routes>
