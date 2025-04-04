@@ -2,6 +2,10 @@
 
 EcoShop is a modern e-commerce platform built with React, TypeScript, and Tailwind CSS, focusing on sustainable and eco-friendly products.
 
+## 🌐 Live Demo
+
+Check out the live demo at [ecoshop.gauravvaghela.com](https://ecoshop.gauravvaghela.com)
+
 ## 🌟 Features
 
 - 🛍️ Full-featured e-commerce functionality
