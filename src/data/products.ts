@@ -224,6 +224,28 @@ export const products = [
     }
   },
   {
+    id: 11,
+    name: "Smart Air Purifier",
+    price: 199.99,
+    description: "Advanced air purifier with HEPA filter and smart connectivity. Monitors air quality and automatically adjusts settings. Control via smartphone app.",
+    image: "https://images.unsplash.com/photo-1585083969600-495ee7e32786?w=800",
+    category: "Home",
+    subcategory: "Appliances",
+    features: [
+      "HEPA Filtration",
+      "Smart Controls",
+      "Air Quality Monitor",
+      "Auto Mode",
+      "Quiet Operation"
+    ],
+    specs: {
+      brand: "PureHome",
+      coverage: "500 sq ft",
+      noise: "25-50dB",
+      warranty: "2 years"
+    }
+  },
+  {
     id: 12,
     name: "Solar Power Bank",
     price: 59.99,
@@ -268,6 +290,52 @@ export const products = [
       fill: "Buckwheat Hulls",
       dimensions: "16\" x 16\" x 6\""
     }
+  },
+  {
+    id: 14,
+    name: "Reusable Produce Bags",
+    price: 15.99,
+    description: "Set of mesh produce bags in various sizes. Perfect for grocery shopping and storage. Made from recycled materials and machine washable.",
+    image: "https://images.unsplash.com/photo-1611030875533-b15fa06c39cd?w=800",
+    category: "Lifestyle",
+    subcategory: "Kitchen",
+    features: [
+      "Zero Waste",
+      "Machine Washable",
+      "Multiple Sizes",
+      "Tare Weight Tags",
+      "See-through Mesh"
+    ],
+    specs: {
+      brand: "EcoWare",
+      material: "Recycled Polyester",
+      quantity: "6 bags",
+      sizes: "S, M, L"
+    }
+  },
+  {
+    id: 15,
+    name: "Smart Indoor Garden",
+    price: 149.99,
+    description: "Automated indoor garden system with LED grow lights. Perfect for growing herbs and small vegetables year-round. Includes starter pod kit.",
+    image: "https://images.unsplash.com/photo-1585666276835-e36c88ed4ba0?w=800",
+    category: "Home",
+    subcategory: "Garden",
+    features: [
+      "LED Grow Lights",
+      "Auto Watering",
+      "Smart Controls",
+      "6 Plant Capacity",
+      "Nutrient Reminder"
+    ],
+    specs: {
+      brand: "GreenLife",
+      power: "40W",
+      capacity: "6 pods",
+      warranty: "1 year"
+    },
+    onSale: true,
+    salePrice: 129.99
   },
   {
     id: 16,

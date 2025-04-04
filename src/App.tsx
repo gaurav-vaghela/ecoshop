@@ -27,6 +27,7 @@ import { Register } from './pages/Register';
 import { Profile } from './pages/Profile';
 import { Orders } from './pages/Orders';
 import { Settings } from './pages/Settings';
+import { Contact } from './pages/Contact';
 import { Preloader } from './components/Preloader';
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -83,6 +84,7 @@ function App() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/orders" element={<Orders />} />
                     <Route path="/settings" element={<Settings />} />
+                    <Route path="/contact" element={<Contact />} />
                   </Routes>
                 </PageWrapper>
               </main>

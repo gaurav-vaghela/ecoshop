@@ -13,7 +13,7 @@ export const Products = () => {
   const [sortBy, setSortBy] = useState<string>('featured');
   const [inStock, setInStock] = useState<boolean>(false);
   const [onSale, setOnSale] = useState<boolean>(false);
-  const [visibleProducts, setVisibleProducts] = useState(9);
+  const [visibleProducts, setVisibleProducts] = useState(12);
 
   const categories = [
     { 
