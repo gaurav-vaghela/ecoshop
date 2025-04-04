@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Range Input Styling */
+@layer base {
+  input[type="range"] {
+    @apply appearance-none bg-gray-200 h-2 rounded-lg;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none w-6 h-6 bg-teal-600 rounded-full cursor-pointer shadow-md hover:bg-teal-700 transition-colors;
+    margin-top: -8px;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    @apply w-6 h-6 bg-teal-600 border-0 rounded-full cursor-pointer shadow-md hover:bg-teal-700 transition-colors;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    @apply bg-gray-200 h-2 rounded-lg;
+  }
+
+  input[type="range"]::-moz-range-track {
+    @apply bg-gray-200 h-2 rounded-lg;
+  }
+
+  input[type="range"]:focus {
+    @apply outline-none;
+  }
+
+  input[type="range"]:focus::-webkit-slider-thumb {
+    @apply ring-4 ring-teal-200;
+  }
+
+  input[type="range"]:focus::-moz-range-thumb {
+    @apply ring-4 ring-teal-200;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+
+.animate-fade-out {
+  animation: fade-out 1s ease-out forwards;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-spin {
+  animation: spin 1.5s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
